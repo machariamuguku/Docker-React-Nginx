@@ -3,25 +3,25 @@ version: "3.7"
 # you can run multiple services inside one docker compose file
 # define them with their dependencies one after the other
 services:
-# service 1 named react-dev
-react-dev:
-# service 1 container name
-container_name: react-dev
-build:
-# the context (working directory) is the current directory
-# change this to the directory containing the dockerfile if in a different place
-context: .
-# the dockerfile to be run
-dockerfile: Dockerfile-dev
-# map the exposed port from the underlying service to a port exposed to the outside
-# in this case  map port 3000 exposed by create react app to also 3000
-# to be used to access the container from the outside
-ports:
-  - "3000:3000"
-  # the mounted volumes (folders which are outside docker but being used by docker)
-volumes:
-  - ".:/app"
-  - "/app/node_modules"
-  # set the environment to development
-environment:
-  - NODE_ENV=development
+  # service 1 named react-dev
+  react-dev:
+    # service 1 container name
+    container_name: react-dev
+    build:
+      # the context (working directory) is the current directory
+      # change this to the directory containing the dockerfile if in a different place
+      context: .
+      # the dockerfile to be run
+      dockerfile: Dockerfile
+    # map the exposed port from the underlying service to a port exposed to the outside
+    # in this case  map port 3000 exposed by create react app to also 3000
+    # to be used to access the container from the outside
+    ports:
+      - "3000:3000"
+    # the mounted volumes (folders which are outside docker but being used by docker)
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    # set the environment to development
+    environment:
+      - NODE_ENV=development

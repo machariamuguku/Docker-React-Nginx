@@ -6,7 +6,7 @@
 # in comparison ubuntu 18.04 is about 1.8Gb
 FROM node:alpine
 # set working directory
-# this is the folder in the container 
+# this is the working folder in the container 
 # from which the app will be running from
 WORKDIR /app
 # copy package.json and yarn.lock
